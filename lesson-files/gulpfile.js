@@ -1,4 +1,4 @@
-const { parallel, task } = require('gulp');
+const { parallel, task, watch } = require('gulp');
 
 function squareRectangle(firstSideOfTheRectangle, secondSideOfTheRectangle) {
     const result = firstSideOfTheRectangle * secondSideOfTheRectangle;
@@ -29,3 +29,24 @@ task('default', parallel(
         squareRhombus(7, 7);
     }
 ));
+//watch
+function handleFileChange(event) {
+    console.log(`File ${event.path} was ${event.type}`);
+
+}
+
+function handleDirectoryChange(event) {
+    console.log(`Directory ${event.path} was ${event.type}`);
+
+}
+
+function watchFiles() {
+    watch('src/**/*.css', handleFileChange);
+    watch('src/**/*.js', handleFileChange);
+    watch('src/images/**/*', handleFileChange);
+    watch('src/index.html', handleFileChange);
+    watch('src/', {events: 'all'}, handleDirectoryChange);
+}
+
+exports.default = watchFiles;
+
