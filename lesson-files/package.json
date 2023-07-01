@@ -1,0 +1,23 @@
+{
+  "name": "gulp-demo",
+  "version": "1.0.0",
+  "description": "Some demo files ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Vladimir Shaitan",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
+  }
+}
